@@ -1,0 +1,2 @@
+/home/daniel/Desktop/emscriptenProjects/emsdk/upstream/emscripten/emar qc libgvars.a  CMakeFiles/gvars.dir/src/GStringUtil.cc.o CMakeFiles/gvars.dir/src/GUI.cc.o CMakeFiles/gvars.dir/src/GUI_impl_headless.cc.o CMakeFiles/gvars.dir/src/GUI_none.cc.o CMakeFiles/gvars.dir/src/gvars2.cc.o CMakeFiles/gvars.dir/src/gvars3.cc.o CMakeFiles/gvars.dir/src/inst.cc.o CMakeFiles/gvars.dir/src/serialize.cc.o
+/home/daniel/Desktop/emscriptenProjects/emsdk/upstream/emscripten/emranlib libgvars.a

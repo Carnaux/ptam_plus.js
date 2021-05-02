@@ -1,0 +1,62 @@
+Determining if the V4L2_PIX_FMT_GREY exist failed with the following output:
+Change Dir: /home/daniel/Desktop/emscriptenProjects/emsdk/ptam-projects/ptam_plus/thorsten/ptam_plus/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_be334/fast && /usr/bin/make -f CMakeFiles/cmTC_be334.dir/build.make CMakeFiles/cmTC_be334.dir/build
+make[1]: Entering directory '/home/daniel/Desktop/emscriptenProjects/emsdk/ptam-projects/ptam_plus/thorsten/ptam_plus/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_be334.dir/CheckSymbolExists.c.o
+/home/daniel/Desktop/emscriptenProjects/emsdk/upstream/emscripten/emcc    -o CMakeFiles/cmTC_be334.dir/CheckSymbolExists.c.o   -c /home/daniel/Desktop/emscriptenProjects/emsdk/ptam-projects/ptam_plus/thorsten/ptam_plus/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/daniel/Desktop/emscriptenProjects/emsdk/ptam-projects/ptam_plus/thorsten/ptam_plus/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: 'linux/videodev2.h' file not found
+#include <linux/videodev2.h>
+         ^~~~~~~~~~~~~~~~~~~
+1 error generated.
+emcc: error: '/home/daniel/Desktop/emscriptenProjects/emsdk/upstream/bin/clang -DEMSCRIPTEN -fignore-exceptions -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -Xclang -iwithsysroot/include/SDL -target wasm32-unknown-emscripten -D__EMSCRIPTEN_major__=2 -D__EMSCRIPTEN_minor__=0 -D__EMSCRIPTEN_tiny__=15 -D_LIBCPP_ABI_VERSION=2 -Dunix -D__unix -D__unix__ -flegacy-pass-manager -Werror=implicit-function-declaration --sysroot=/home/daniel/Desktop/emscriptenProjects/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -c /home/daniel/Desktop/emscriptenProjects/emsdk/ptam-projects/ptam_plus/thorsten/ptam_plus/CMakeFiles/CMakeTmp/CheckSymbolExists.c -o CMakeFiles/cmTC_be334.dir/CheckSymbolExists.c.o' failed (1)
+make[1]: *** [CMakeFiles/cmTC_be334.dir/build.make:66: CMakeFiles/cmTC_be334.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/daniel/Desktop/emscriptenProjects/emsdk/ptam-projects/ptam_plus/thorsten/ptam_plus/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_be334/fast] Error 2
+
+
+File /home/daniel/Desktop/emscriptenProjects/emsdk/ptam-projects/ptam_plus/thorsten/ptam_plus/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <linux/videodev2.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef V4L2_PIX_FMT_GREY
+  return ((int*)(&V4L2_PIX_FMT_GREY))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the uvc_stream_get_frame exist failed with the following output:
+Change Dir: /home/daniel/Desktop/emscriptenProjects/emsdk/ptam-projects/ptam_plus/thorsten/ptam_plus/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_94992/fast && /usr/bin/make -f CMakeFiles/cmTC_94992.dir/build.make CMakeFiles/cmTC_94992.dir/build
+make[1]: Entering directory '/home/daniel/Desktop/emscriptenProjects/emsdk/ptam-projects/ptam_plus/thorsten/ptam_plus/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_94992.dir/CheckSymbolExists.c.o
+/home/daniel/Desktop/emscriptenProjects/emsdk/upstream/emscripten/emcc    -o CMakeFiles/cmTC_94992.dir/CheckSymbolExists.c.o   -c /home/daniel/Desktop/emscriptenProjects/emsdk/ptam-projects/ptam_plus/thorsten/ptam_plus/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/daniel/Desktop/emscriptenProjects/emsdk/ptam-projects/ptam_plus/thorsten/ptam_plus/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: 'libuvc/libuvc.h' file not found
+#include <libuvc/libuvc.h>
+         ^~~~~~~~~~~~~~~~~
+1 error generated.
+emcc: error: '/home/daniel/Desktop/emscriptenProjects/emsdk/upstream/bin/clang -DEMSCRIPTEN -fignore-exceptions -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -Xclang -iwithsysroot/include/SDL -target wasm32-unknown-emscripten -D__EMSCRIPTEN_major__=2 -D__EMSCRIPTEN_minor__=0 -D__EMSCRIPTEN_tiny__=15 -D_LIBCPP_ABI_VERSION=2 -Dunix -D__unix -D__unix__ -flegacy-pass-manager -Werror=implicit-function-declaration --sysroot=/home/daniel/Desktop/emscriptenProjects/emsdk/upstream/emscripten/cache/sysroot -Xclang -iwithsysroot/include/compat -c /home/daniel/Desktop/emscriptenProjects/emsdk/ptam-projects/ptam_plus/thorsten/ptam_plus/CMakeFiles/CMakeTmp/CheckSymbolExists.c -o CMakeFiles/cmTC_94992.dir/CheckSymbolExists.c.o' failed (1)
+make[1]: *** [CMakeFiles/cmTC_94992.dir/build.make:66: CMakeFiles/cmTC_94992.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/daniel/Desktop/emscriptenProjects/emsdk/ptam-projects/ptam_plus/thorsten/ptam_plus/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_94992/fast] Error 2
+
+
+File /home/daniel/Desktop/emscriptenProjects/emsdk/ptam-projects/ptam_plus/thorsten/ptam_plus/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <libuvc/libuvc.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef uvc_stream_get_frame
+  return ((int*)(&uvc_stream_get_frame))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}

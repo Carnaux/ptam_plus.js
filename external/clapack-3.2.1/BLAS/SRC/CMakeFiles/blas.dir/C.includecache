@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/daniel/Desktop/emscriptenProjects/emsdk/ptam-projects/ptam_plus/thorsten/ptam_plus/external/clapack-3.2.1/BLAS/SRC/xerbla.c
+f2c.h
+/home/daniel/Desktop/emscriptenProjects/emsdk/ptam-projects/ptam_plus/thorsten/ptam_plus/external/clapack-3.2.1/BLAS/SRC/f2c.h
+blaswrap.h
+/home/daniel/Desktop/emscriptenProjects/emsdk/ptam-projects/ptam_plus/thorsten/ptam_plus/external/clapack-3.2.1/BLAS/SRC/blaswrap.h
+
+external/clapack-3.2.1/INCLUDE/blaswrap.h
+
+external/clapack-3.2.1/INCLUDE/f2c.h
+

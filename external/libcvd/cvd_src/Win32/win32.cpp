@@ -1,59 +1,32 @@
-#include "win32.h" 
-
-#include <time.h>
-#include <string>
-#include <vector>
 #include <algorithm>
 #include <cassert>
 #include <io.h>
 #include <stdlib.h>
+#include <string>
+#include <time.h>
+#include <vector>
 
-#if defined(_MSC_VER) || defined(_MSC_EXTENSIONS)
-  #define DELTA_EPOCH_IN_MICROSECS  11644473600000000Ui64
-#else
-  #define DELTA_EPOCH_IN_MICROSECS  11644473600000000ULL
-#endif
-
-// implementation from http://www.openasthra.com/c-tidbits/gettimeofday-function-for-windows/
-namespace CVD {
-
-long long get_time_of_day_ns()
+namespace CVD
 {
-    FILETIME ft;
-    long long tmpres = 0;
-    static int tzflag;
 
-	//Contains a 64-bit value representing the number of 100-nanosecond intervals since January 1, 1601 (UTC).
-	GetSystemTimeAsFileTime(&ft);
+namespace Internal
+{
 
-	tmpres |= ft.dwHighDateTime;
-	tmpres <<= 32;
-	tmpres |= ft.dwLowDateTime;
+	void* aligned_alloc(size_t count, size_t alignment)
+	{
+		return _aligned_malloc(count, alignment);
+	}
 
-	//tempres is in 100ns increments
-	//Convert it to ns
-	tmpres *= 100;
-
-	/*converting file time to unix epoch*/
-	tmpres -= DELTA_EPOCH_IN_MICROSECS * (long long)1000; 
-
-    return tmpres;
-}
-
-namespace Internal {
-
-void * aligned_alloc(size_t count, size_t alignment){
-    return _aligned_malloc(count, alignment);
-}
-
-void aligned_free(void * memory){
-    _aligned_free(memory);
-}
+	void aligned_free(void* memory)
+	{
+		_aligned_free(memory);
+	}
 
 } // namespace Internal
 
 // returns path component from a general path string
-static std::string get_path( const std::string & p){
+static std::string get_path(const std::string& p)
+{
 	char drive[_MAX_DRIVE];
 	char dir[_MAX_DIR];
 	char out[1024];
@@ -68,19 +41,21 @@ static std::string get_path( const std::string & p){
 std::vector<std::string> globlist(const std::string& gl)
 {
 	std::vector<std::string> ret;
-	
+
 	struct _finddatai64_t c_file;
 	intptr_t hFile;
 
 	// get the path component to stick it to the front again
 	const std::string path = get_path(gl);
 
-	// Find first file in current directory 
-	if( (hFile = _findfirsti64( gl.c_str(), &c_file )) != -1L ){
-		do {
+	// Find first file in current directory
+	if((hFile = _findfirsti64(gl.c_str(), &c_file)) != -1L)
+	{
+		do
+		{
 			ret.push_back(path + c_file.name);
-		} while( _findnexti64( hFile, &c_file ) == 0 );
-		_findclose( hFile );
+		} while(_findnexti64(hFile, &c_file) == 0);
+		_findclose(hFile);
 	}
 	std::sort(ret.begin(), ret.end());
 	return ret;

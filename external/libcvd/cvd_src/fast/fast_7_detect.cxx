@@ -7,7 +7,7 @@
 using namespace std;
 namespace CVD
 {
-void fast_corner_detect_plain_7(const SubImage<byte>& i, vector<ImageRef>& corners, int b)
+void fast_corner_detect_plain_7(const BasicImage<byte>& i, vector<ImageRef>& corners, int b)
 {
 	int y, cb, c_b;
 	const byte  *line_max, *line_min;
@@ -16045,7 +16045,7 @@ void fast_corner_detect_plain_7(const SubImage<byte>& i, vector<ImageRef>& corne
 			    continue;
 
 			success:
-				corners.push_back(ImageRef(cache_0-line_min, y));
+				corners.push_back(ImageRef(static_cast<int>(cache_0-line_min), y));
 		}
 	}
 }
